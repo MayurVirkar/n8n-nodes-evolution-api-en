@@ -1,47 +1,45 @@
 import { INodeProperties } from 'n8n-workflow';
 
-// Campo das Eventos
+// Events Fields
 export const eventsFields: INodeProperties[] = [
-	// Campos = Webhook
+	// Fields = Webhook
 	{
-		displayName: 'Nome Da Instancia',
+		displayName: 'Instance Name',
 		name: 'instanceName',
 		type: 'string',
 		default: '',
 		required: true,
-		description: 'Digite o nome da instância que vai enviar a mensagem',
+		description: 'Enter the name of the instance that will send the message',
 		displayOptions: {
 			show: {
 				resource: ['events-api'],
 				operation: ['webhook'],
 			},
 		},
-	},
-	{
-		displayName: 'O Que Deseja Fazer',
+	},	{
+		displayName: 'What Do You Want To Do',
 		name: 'resourceForWebhook',
 		type: 'options',
 		options: [
 			{
-				name: 'Definir Webhook',
+				name: 'Set Webhook',
 				value: 'setWebhook',
 			},
 			{
-				name: 'Verificar Webhook',
+				name: 'Check Webhook',
 				value: 'findWebhook',
 			},
 		],
 		default: 'setWebhook',
-		description: 'Escolha entre definir um novo webhook ou verificar o webhook',
+		description: 'Choose between setting a new webhook or checking the webhook',
 		displayOptions: {
 			show: {
 				resource: ['events-api'],
 				operation: ['webhook'],
 			},
 		},
-	},
-	{
-		displayName: 'Ativar Webhook',
+	},	{
+		displayName: 'Enable Webhook',
 		name: 'enabled',
 		type: 'boolean',
 		default: true,
@@ -53,13 +51,12 @@ export const eventsFields: INodeProperties[] = [
 				resourceForWebhook: ['setWebhook'],
 			},
 		},
-	},
-	{
-		displayName: 'Url Do Webhook',
+	},	{
+		displayName: 'Webhook URL',
 		name: 'webhookUrl',
 		type: 'string',
 		default: '',
-		description: 'Digite a URL que vai receber os eventos do Webhook',
+		description: 'Enter the URL that will receive webhook events',
 		displayOptions: {
 			show: {
 				resource: ['events-api'],
@@ -67,9 +64,8 @@ export const eventsFields: INodeProperties[] = [
 				resourceForWebhook: ['setWebhook'],
 			},
 		},
-	},
-	{
-		displayName: 'Webhook Por Eventos',
+	},	{
+		displayName: 'Webhook By Events',
 		name: 'webhookByEvents',
 		type: 'boolean',
 		default: false,
@@ -82,9 +78,8 @@ export const eventsFields: INodeProperties[] = [
 				resourceForWebhook: ['setWebhook'],
 			},
 		},
-	},
-	{
-		displayName: 'Base64 No Webhook',
+	},	{
+		displayName: 'Base64 In Webhook',
 		name: 'webhookBase64',
 		type: 'boolean',
 		default: false,
@@ -96,9 +91,8 @@ export const eventsFields: INodeProperties[] = [
 				resourceForWebhook: ['setWebhook'],
 			},
 		},
-	},
-	{
-		displayName: 'Eventos',
+	},	{
+		displayName: 'Events',
 		name: 'webhookEvents',
 		type: 'multiOptions',
 		displayOptions: {
@@ -204,47 +198,44 @@ export const eventsFields: INodeProperties[] = [
 			},
 		],
 	},
-
-	// Campos = RabbitMQ
+	// Fields = RabbitMQ
 	{
-		displayName: 'Nome Da Instancia',
+		displayName: 'Instance Name',
 		name: 'instanceName',
 		type: 'string',
 		default: '',
 		required: true,
-		description: 'Digite o nome da instância que vai enviar a mensagem',
+		description: 'Enter the name of the instance that will send the message',
 		displayOptions: {
 			show: {
 				resource: ['events-api'],
 				operation: ['rabbitmq'],
 			},
 		},
-	},
-	{
-		displayName: 'O Que Deseja Fazer',
+	},	{
+		displayName: 'What Do You Want To Do',
 		name: 'resourceForRabbitMQ',
 		type: 'options',
 		options: [
 			{
-				name: 'Definir RabbitMQ',
+				name: 'Set RabbitMQ',
 				value: 'setRabbitMQ',
 			},
 			{
-				name: 'Verificar RabbitMQ',
+				name: 'Check RabbitMQ',
 				value: 'findRabbitMQ',
 			},
 		],
 		default: 'setRabbitMQ',
-		description: 'Escolha entre ativar/desativar RabbitMQ ou verificar o RabbitMQ',
+		description: 'Choose between enabling/disabling RabbitMQ or checking RabbitMQ',
 		displayOptions: {
 			show: {
 				resource: ['events-api'],
 				operation: ['rabbitmq'],
 			},
 		},
-	},
-	{
-		displayName: 'Ativar RabbitMQ',
+	},	{
+		displayName: 'Enable RabbitMQ',
 		name: 'enabled',
 		type: 'boolean',
 		default: true,
@@ -256,9 +247,8 @@ export const eventsFields: INodeProperties[] = [
 				resourceForRabbitMQ: ['setRabbitMQ'],
 			},
 		},
-	},
-	{
-		displayName: 'Eventos',
+	},	{
+		displayName: 'Events',
 		name: 'rabbitMQEvents',
 		type: 'multiOptions',
 		displayOptions: {

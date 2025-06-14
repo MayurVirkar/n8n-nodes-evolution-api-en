@@ -1,14 +1,14 @@
 import { INodeProperties } from 'n8n-workflow';
 
-// Opções da integrations-api (Integração)
+// Integrations-api options (Integration)
 export const integrationsOperationsOptions: INodeProperties = {
-	displayName: 'Operação',
+	displayName: 'Operation',
 	name: 'operation',
 	type: 'options',
 	noDataExpression: true,
 	displayOptions: {
 		show: {
-			resource: ['integrations-api'], // Value do Resource
+			resource: ['integrations-api'], // Resource Value
 		},
 	},
 	options: [
@@ -16,38 +16,38 @@ export const integrationsOperationsOptions: INodeProperties = {
 			// Set/find Chatwoot
 			name: 'Chatwoot',
 			action: 'Chatwoot',
-			description: 'Define/Busca integração com Chatwoot',
+			description: 'Set/Find Chatwoot integration',
 			value: 'chatwoot',
 		},
 		{
 			// Create/find/fetch/Update/Delete/Start/Change Status/Fetch Sessions da Evolution Bot
 			name: 'Evolution Bot',
 			action: 'Evolution bot',
-			description: 'Controla a integração com Evolution Bot',
+			description: 'Control Evolution Bot integration',
 			value: 'evolution-bot',
 		},
 		{
 			// Create/find/fetch/Update/Delete/Start/Change Status/Fetch Sessions do Typebot
 			name: 'Typebot',
 			action: 'Typebot',
-			description: 'Controla a integração com Typebot',
+			description: 'Control Typebot integration',
 			value: 'typebot',
 		},
 		{
 			// Create/find/fetch/Update/Delete/Start/Change Status/Fetch Sessions da Dify
 			name: 'Dify',
 			action: 'Dify',
-			description: 'Controla a integração com Dify',
+			description: 'Control Dify integration',
 			value: 'difyBot',
 		},
 		{
 			// Create/find/fetch/Update/Delete/Start/Change Status/Fetch Sessions da Dify
 			name: 'Flowise',
 			action: 'Flowise',
-			description: 'Controla a integração com Flowise',
+			description: 'Control Flowise integration',
 			value: 'flowiseBot',
 		},
 	],
-	// Definindo como padrão a opção "Enviar Texto"
+	// Setting default option to "Send Text"
 	default: 'chatwoot',
 };

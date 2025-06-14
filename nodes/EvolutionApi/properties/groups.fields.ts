@@ -2,152 +2,142 @@ import { INodeProperties, NodePropertyTypes } from 'n8n-workflow';
 
 export const groupsFields: INodeProperties[] = [
 	{
-		displayName: 'Nome Da Instância',
+		displayName: 'Instance Name',
 		name: 'instanceName',
 		type: 'string' as NodePropertyTypes,
 		default: '',
 		required: true,
-		description: 'Digite o nome da instância que vai criar o grupo',
+		description: 'Enter the name of the instance that will create the group',
 		displayOptions: {
 			show: {
 				resource: ['groups-api'],
 				operation: ['create-group'],
 			},
 		},
-	},
-	{
-		displayName: 'Nome Do Grupo',
+	},	{
+		displayName: 'Group Name',
 		name: 'subject',
 		type: 'string' as NodePropertyTypes,
 		default: '',
 		required: true,
-		description: 'Digite o nome do grupo que será criado',
+		description: 'Enter the name of the group to be created',
 		displayOptions: {
 			show: {
 				resource: ['groups-api'],
 				operation: ['create-group'],
 			},
 		},
-	},
-	{
-		displayName: 'Descrição',
+	},	{
+		displayName: 'Description',
 		name: 'description',
 		type: 'string' as NodePropertyTypes,
 		default: '',
 
-		description: 'Digite a descrição do grupo (opcional)',
+		description: 'Enter the group description (optional)',
 		displayOptions: {
 			show: {
 				resource: ['groups-api'],
 				operation: ['create-group'],
 			},
 		},
-	},
-	{
-		displayName: 'Participantes',
+	},	{
+		displayName: 'Participants',
 		name: 'participants',
 		type: 'string' as NodePropertyTypes,
 		default: '',
 		required: true,
-		description: 'Digite os números dos participantes separados por vírgula (ex: 5511999999999,5511888888888)',
+		description: 'Enter participant numbers separated by comma (ex: 5511999999999,5511888888888)',
 		displayOptions: {
 			show: {
 				resource: ['groups-api'],
 				operation: ['create-group'],
 			},
 		},
-	},
-	{
-		displayName: 'Nome Da Instância',
+	},	{
+		displayName: 'Instance Name',
 		name: 'instanceName',
 		type: 'string' as NodePropertyTypes,
 		default: '',
 		required: true,
-		description: 'Digite o nome da instância que vai atualizar a imagem',
+		description: 'Enter the name of the instance that will update the image',
 		displayOptions: {
 			show: {
 				resource: ['groups-api'],
 				operation: ['update-group-picture'],
 			},
 		},
-	},
-	{
-		displayName: 'ID Do Grupo',
+	},	{
+		displayName: 'Group ID',
 		name: 'groupJid',
 		type: 'string' as NodePropertyTypes,
 		default: '',
 		required: true,
-		description: 'ID do grupo que terá a imagem atualizada',
+		description: 'ID of the group that will have its image updated',
 		displayOptions: {
 			show: {
 				resource: ['groups-api'],
 				operation: ['update-group-picture'],
 			},
 		},
-	},
-	{
-		displayName: 'URL Da Imagem',
+	},	{
+		displayName: 'Image URL',
 		name: 'image',
 		type: 'string' as NodePropertyTypes,
 		default: '',
 		required: true,
-		description: 'URL da imagem que será definida como foto do grupo',
+		description: 'URL of the image that will be set as the group photo',
 		displayOptions: {
 			show: {
 				resource: ['groups-api'],
 				operation: ['update-group-picture'],
 			},
 		},
-	},
-	{
-		displayName: 'Nome Da Instância',
+	},	{
+		displayName: 'Instance Name',
 		name: 'instanceName',
 		type: 'string' as NodePropertyTypes,
 		default: '',
 		required: true,
-		description: 'Digite o nome da instância que vai atualizar o nome do grupo',
+		description: 'Enter the name of the instance that will update the group name',
 		displayOptions: {
 			show: {
 				resource: ['groups-api'],
 				operation: ['update-group-name'],
 			},
 		},
-	},
-	{
-		displayName: 'ID Do Grupo',
+	},	{
+		displayName: 'Group ID',
 		name: 'groupJid',
 		type: 'string' as NodePropertyTypes,
 		default: '',
 		required: true,
-		description: 'ID do grupo que terá o nome atualizado',
+		description: 'ID of the group that will have its name updated',
 		displayOptions: {
 			show: {
 				resource: ['groups-api'],
 				operation: ['update-group-name'],
 			},
 		},
-	},
-	{
-		displayName: 'Novo Nome Do Grupo',
+	},	{
+		displayName: 'New Group Name',
 		name: 'subject',
 		type: 'string' as NodePropertyTypes,
 		default: '',
 		required: true,
-		description: 'Novo nome que será definido para o grupo',
+		description: 'New name that will be set for the group',
 		displayOptions: {
 			show: {
 				resource: ['groups-api'],
 				operation: ['update-group-name'],
 			},
 		},
-	},
-	{
-		displayName: 'Nome Da Instância',
+	},	{
+		displayName: 'Instance Name',
 		name: 'instanceName',
 		type: 'string' as NodePropertyTypes,
 		default: '',
 		required: true,
-		description: 'Digite o nome da instância que vai atualizar a descrição',
+		description: 'Enter the name of the instance that will update the description',
 		displayOptions: {
 			show: {
 				resource: ['groups-api'],
@@ -189,7 +179,7 @@ export const groupsFields: INodeProperties[] = [
 		type: 'string' as NodePropertyTypes,
 		default: '',
 		required: true,
-		description: 'Digite o nome da instância que vai buscar o código',
+		description: 'Enter the name of the instance that will fetch the code',
 		displayOptions: {
 			show: {
 				resource: ['groups-api'],

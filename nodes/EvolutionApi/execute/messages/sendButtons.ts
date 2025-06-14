@@ -6,9 +6,8 @@ import {
 } from 'n8n-workflow';
 import { evolutionRequest } from '../evolutionRequest';
 
-export async function sendButtons(ef: IExecuteFunctions) {
-	try {
-		// Parâmetros obrigatórios
+export async function sendButtons(ef: IExecuteFunctions) {	try {
+		// Required parameters
 		const instanceName = ef.getNodeParameter('instanceName', 0) as string;
 		const remoteJid = ef.getNodeParameter('remoteJid', 0) as string;
 		const title = ef.getNodeParameter('title', 0) as string;
@@ -23,13 +22,13 @@ export async function sendButtons(ef: IExecuteFunctions) {
 			phoneNumber?: string;
 		}>;
 
-		// Validação dos botões
+		// Button validation
 		if (!Array.isArray(buttons) || buttons.length === 0 || buttons.length > 3) {
 			const errorData = {
 				success: false,
 				error: {
-					message: 'Lista de botões inválida',
-					details: 'É necessário fornecer entre 1 e 3 botões',
+					message: 'Invalid button list',
+					details: 'Must provide between 1 and 3 buttons',
 					code: 'INVALID_BUTTONS',
 					timestamp: new Date().toISOString(),
 				},
@@ -40,7 +39,7 @@ export async function sendButtons(ef: IExecuteFunctions) {
 			};
 		}
 
-		// Opções adicionais
+		// Additional options
 		const options = ef.getNodeParameter('options_message', 0, {}) as {
 			delay?: number;
 			quoted?: {

@@ -6,9 +6,8 @@ import {
 } from 'n8n-workflow';
 import { evolutionRequest } from '../evolutionRequest';
 
-export async function sendContact(ef: IExecuteFunctions) {
-	try {
-		// Parâmetros obrigatórios
+export async function sendContact(ef: IExecuteFunctions) {	try {
+		// Required parameters
 		const instanceName = ef.getNodeParameter('instanceName', 0);
 		const remoteJid = ef.getNodeParameter('remoteJid', 0);
 		const contacts = ef.getNodeParameter('contacts.contactValues', 0) as {
@@ -20,13 +19,13 @@ export async function sendContact(ef: IExecuteFunctions) {
 			url?: string;
 		}[];
 
-		// Validação dos contatos
+		// Contact validation
 		if (!Array.isArray(contacts) || contacts.length === 0) {
 			const errorData = {
 				success: false,
 				error: {
-					message: 'Lista de contatos inválida',
-					details: 'É necessário fornecer pelo menos um contato',
+					message: 'Invalid contact list',
+					details: 'At least one contact is required',
 					code: 'INVALID_CONTACTS',
 					timestamp: new Date().toISOString(),
 				},

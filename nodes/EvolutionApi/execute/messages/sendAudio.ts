@@ -6,18 +6,17 @@ import {
 } from 'n8n-workflow';
 import { evolutionRequest } from '../evolutionRequest';
 
-export async function sendAudio(ef: IExecuteFunctions) {
-	try {
-		// Parâmetros obrigatórios
+export async function sendAudio(ef: IExecuteFunctions) {	try {
+		// Required parameters
 		const instanceName = ef.getNodeParameter('instanceName', 0) as string;
 		const remoteJid = ef.getNodeParameter('remoteJid', 0) as string;
 		const media = ef.getNodeParameter('media', 0) as string;
 
-		// Parâmetros opcionais com valores padrão
+		// Optional parameters with default values
 		const mimetype = (ef.getNodeParameter('mimetype', 0, 'audio/mp3') as string) || 'audio/mp3';
 		const fileName = (ef.getNodeParameter('fileName', 0, 'audio.mp3') as string) || 'audio.mp3';
 
-		// Opções adicionais
+		// Additional options
 		const options = ef.getNodeParameter('options_message', 0, {}) as {
 			delay?: number;
 			quoted?: {

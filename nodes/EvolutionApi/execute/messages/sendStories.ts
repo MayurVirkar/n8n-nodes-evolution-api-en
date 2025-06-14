@@ -6,9 +6,8 @@ import {
 } from 'n8n-workflow';
 import { evolutionRequest } from '../evolutionRequest';
 
-export async function sendStories(ef: IExecuteFunctions) {
-	try {
-		// Parâmetros obrigatórios
+export async function sendStories(ef: IExecuteFunctions) {	try {
+		// Required parameters
 		const instanceName = ef.getNodeParameter('instanceName', 0) as string;
 		const content = ef.getNodeParameter('content', 0) as string;
 		const type = ef.getNodeParameter('type', 0) as 'text' | 'image' | 'video' | 'audio';
@@ -17,13 +16,13 @@ export async function sendStories(ef: IExecuteFunctions) {
 		const backgroundColor = ef.getNodeParameter('backgroundColor', 0, '#000000') as string;
 		const font = ef.getNodeParameter('font', 0, 1) as number;
 
-		// Validação da URL do conteúdo para tipos não texto
+		// Content URL validation for non-text types
 		if (type !== 'text' && !content.startsWith('http') && !content.startsWith('data:')) {
 			const errorData = {
 				success: false,
 				error: {
-					message: 'Formato de conteúdo inválido',
-					details: 'O conteúdo deve ser uma URL válida ou um base64',
+					message: 'Invalid content format',
+					details: 'Content must be a valid URL or base64',
 					code: 'INVALID_CONTENT_FORMAT',
 					timestamp: new Date().toISOString(),
 				},
@@ -42,12 +41,12 @@ export async function sendStories(ef: IExecuteFunctions) {
 			allContacts
 		};
 
-		// Adiciona caption apenas para imagem ou vídeo
+		// Add caption only for image or video
 		if ((type === 'image' || type === 'video') && caption) {
 			body.caption = caption;
 		}
 
-		// Se não for para todos os contatos, pega a lista específica
+		// If not for all contacts, get the specific list
 		if (!allContacts) {
 			const statusJidList = ef.getNodeParameter('statusJidList', 0, '') as string;
 			if (statusJidList) {

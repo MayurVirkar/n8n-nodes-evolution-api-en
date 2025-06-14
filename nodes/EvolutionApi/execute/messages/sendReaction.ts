@@ -6,22 +6,21 @@ import {
 } from 'n8n-workflow';
 import { evolutionRequest } from '../evolutionRequest';
 
-export async function sendReaction(ef: IExecuteFunctions) {
-	try {
-		// Parâmetros obrigatórios
+export async function sendReaction(ef: IExecuteFunctions) {	try {
+		// Required parameters
 		const instanceName = ef.getNodeParameter('instanceName', 0) as string;
 		const remoteJid = ef.getNodeParameter('remoteJid', 0) as string;
 		const messageId = ef.getNodeParameter('messageId', 0) as string;
 		const fromMe = ef.getNodeParameter('fromMe', 0) as boolean;
 		const reaction = ef.getNodeParameter('reaction', 0) as string;
 
-		// Validação da reação
+		// Reaction validation
 		if (!reaction) {
 			const errorData = {
 				success: false,
 				error: {
-					message: 'Reação inválida',
-					details: 'É necessário fornecer um emoji para a reação',
+					message: 'Invalid reaction',
+					details: 'An emoji is required for the reaction',
 					code: 'INVALID_REACTION',
 					timestamp: new Date().toISOString(),
 				},

@@ -6,9 +6,8 @@ import {
 } from 'n8n-workflow';
 import { evolutionRequest } from '../evolutionRequest';
 
-export async function sendPoll(ef: IExecuteFunctions) {
-	try {
-		// Parâmetros obrigatórios
+export async function sendPoll(ef: IExecuteFunctions) {	try {
+		// Required parameters
 		const instanceName = ef.getNodeParameter('instanceName', 0);
 		const remoteJid = ef.getNodeParameter('remoteJid', 0);
 		const pollTitle = ef.getNodeParameter('caption', 0);
@@ -16,7 +15,7 @@ export async function sendPoll(ef: IExecuteFunctions) {
 			optionValue: string;
 		}[];
 
-		// Opções adicionais
+		// Additional options
 		const options_message = ef.getNodeParameter('options_message', 0, {}) as {
 			delay?: number;
 			quoted?: {
@@ -26,15 +25,15 @@ export async function sendPoll(ef: IExecuteFunctions) {
 			};
 		};
 
-		// Verifica se options é um array e não está vazio
+		// Check if options is an array and not empty
 		const pollOptions = Array.isArray(options) ? options.map((option) => option.optionValue) : [];
 
 		if (pollOptions.length === 0) {
 			const errorData = {
 				success: false,
 				error: {
-					message: 'Opções da enquete inválidas',
-					details: 'A enquete precisa ter pelo menos uma opção',
+					message: 'Invalid poll options',
+					details: 'The poll needs at least one option',
 					code: 'INVALID_POLL_OPTIONS',
 					timestamp: new Date().toISOString(),
 				},

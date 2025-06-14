@@ -6,19 +6,18 @@ import {
 } from 'n8n-workflow';
 import { evolutionRequest } from '../evolutionRequest';
 
-export async function sendVideo(ef: IExecuteFunctions) {
-	try {
-		// Parâmetros obrigatórios
+export async function sendVideo(ef: IExecuteFunctions) {	try {
+		// Required parameters
 		const instanceName = ef.getNodeParameter('instanceName', 0) as string;
 		const remoteJid = ef.getNodeParameter('remoteJid', 0) as string;
 		const media = ef.getNodeParameter('media', 0) as string;
 
-		// Parâmetros opcionais com valores padrão
+		// Optional parameters with default values
 		const mimetype = (ef.getNodeParameter('mimetype', 0, 'video/mp4') as string) || 'video/mp4';
 		const caption = ef.getNodeParameter('caption', 0, '') as string;
 		const fileName = (ef.getNodeParameter('fileName', 0, 'video.mp4') as string) || 'video.mp4';
 
-		// Opções adicionais
+		// Additional options
 		const options = ef.getNodeParameter('options_message', 0, {}) as {
 			delay?: number;
 			quoted?: {

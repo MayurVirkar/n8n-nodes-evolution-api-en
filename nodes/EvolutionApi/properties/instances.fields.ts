@@ -705,11 +705,11 @@ export const instancesFields: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Ler Status',
+		displayName: 'Read Status',
 		name: 'readStatus',
 		type: 'boolean',
 		default: false,
-		description: 'Whether to mention them all',
+		description: 'Whether to read status messages',
 		displayOptions: {
 			show: {
 				resource: ['instances-api'],
@@ -718,14 +718,14 @@ export const instancesFields: INodeProperties[] = [
 		},
 	},
 
-	// Campos = Definir presença
+	// Fields = Set Presence
 	{
-		displayName: 'Nome Da Instância',
+		displayName: 'Instance Name',
 		name: 'instanceName',
 		type: 'string',
 		default: '',
 		required: true,
-		description: 'Digite o nome da instância',
+		description: 'Enter the instance name',
 		displayOptions: {
 			show: {
 				resource: ['instances-api'],
@@ -734,22 +734,22 @@ export const instancesFields: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Presença',
+		displayName: 'Presence',
 		name: 'presence',
 		type: 'options',
 		options: [
 			{
-				name: 'Disponível',
+				name: 'Available',
 				value: 'available',
 			},
 			{
-				name: 'Indisponível',
+				name: 'Unavailable',
 				value: 'unavailable',
 			},
 		],
 		default: 'available',
 		required: true,
-		description: 'Status de presença da instância',
+		description: 'Instance presence status',
 		displayOptions: {
 			show: {
 				resource: ['instances-api'],
@@ -758,14 +758,14 @@ export const instancesFields: INodeProperties[] = [
 		},
 	},
 
-	// Campos = Proxy
+	// Fields = Proxy
 	{
-		displayName: 'Nome Da Instancia',
+		displayName: 'Instance Name',
 		name: 'instanceName',
 		type: 'string',
 		default: '',
 		required: true,
-		description: 'Digite o nome da instância que vai enviar a mensagem',
+		description: 'Enter the name of the instance that will send the message',
 		displayOptions: {
 			show: {
 				resource: ['instances-api'],
@@ -775,21 +775,21 @@ export const instancesFields: INodeProperties[] = [
 	},
 
 	{
-		displayName: 'O Que Deseja Fazer',
+		displayName: 'What Do You Want to Do',
 		name: 'resourceForProxy',
 		type: 'options',
 		options: [
 			{
-				name: 'Definir Proxy',
+				name: 'Set Proxy',
 				value: 'setProxy',
 			},
 			{
-				name: 'Verificar Proxy',
+				name: 'Check Proxy',
 				value: 'findProxy',
 			},
 		],
 		default: 'setProxy',
-		description: 'Escolha entre ativar/desativar proxy ou verificar o proxy',
+		description: 'Choose between enable/disable proxy or check proxy',
 		displayOptions: {
 			show: {
 				resource: ['instances-api'],
@@ -798,7 +798,7 @@ export const instancesFields: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Ativar Proxy',
+		displayName: 'Enable Proxy',
 		name: 'enabled',
 		type: 'boolean',
 		default: true,

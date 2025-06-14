@@ -6,9 +6,8 @@ import {
 } from 'n8n-workflow';
 import { evolutionRequest } from '../evolutionRequest';
 
-export async function sendList(ef: IExecuteFunctions) {
-	try {
-		// Parâmetros obrigatórios
+export async function sendList(ef: IExecuteFunctions) {	try {
+		// Required parameters
 		const instanceName = ef.getNodeParameter('instanceName', 0);
 		const remoteJid = ef.getNodeParameter('remoteJid', 0);
 		const title = ef.getNodeParameter('title', 0);
@@ -25,11 +24,11 @@ export async function sendList(ef: IExecuteFunctions) {
 			};
 		}[];
 
-		// Validação das seções
+		// Section validation
 		if (!Array.isArray(sections) || sections.length === 0) {
 			const errorData = {
 				success: false,
-				error: {					message: 'Invalid sections list',
+				error: {message: 'Invalid sections list',
 					details: 'At least one section with options is required',
 					code: 'INVALID_SECTIONS',
 					timestamp: new Date().toISOString(),

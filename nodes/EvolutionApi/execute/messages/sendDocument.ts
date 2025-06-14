@@ -7,22 +7,21 @@ import {
 } from 'n8n-workflow';
 import { evolutionRequest } from '../evolutionRequest';
 
-export async function sendDocument(ef: IExecuteFunctions) {
-	try {
-		// Parâmetros obrigatórios
+export async function sendDocument(ef: IExecuteFunctions) {	try {
+		// Required parameters
 		const instanceName = ef.getNodeParameter('instanceName', 0) as string;
 		const remoteJid = ef.getNodeParameter('remoteJid', 0) as string;
 		const media = ef.getNodeParameter('media', 0) as string;
 
-		// Validação do campo media
+		// Media field validation
 		if (!media.startsWith('http') && !media.startsWith('data:') && !isBase64(media)) {
 			throw new NodeApiError(ef.getNode(), {
-				message: 'Formato de mídia inválido',
-				description: 'O documento deve ser uma URL válida ou um base64',
+				message: 'Invalid media format',
+				description: 'The document must be a valid URL or base64',
 			});
 		}
 
-		// Função auxiliar para verificar se é base64
+		// Helper function to check if it's base64
 		function isBase64(str: string) {
 			try {
 				return Buffer.from(str, 'base64').toString('base64') === str;
@@ -31,12 +30,12 @@ export async function sendDocument(ef: IExecuteFunctions) {
 			}
 		}
 
-		// Parâmetros opcionais com valores padrão
+		// Optional parameters with default values
 		const mimetype = (ef.getNodeParameter('mimetype', 0, 'application/pdf') as string) || 'application/pdf';
 		const caption = ef.getNodeParameter('caption', 0, '') as string;
 		const fileName = (ef.getNodeParameter('fileName', 0, 'document.pdf') as string) || 'document.pdf';
 
-		// Opções adicionais
+		// Additional options
 		const options = ef.getNodeParameter('options_message', 0, {}) as {
 			delay?: number;
 			quoted?: {

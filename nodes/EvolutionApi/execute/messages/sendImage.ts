@@ -11,19 +11,18 @@ export async function sendImage(ef: IExecuteFunctions) {
 	const items = ef.getInputData();
 	const returnData: INodeExecutionData[] = [];
 
-	for (let i = 0; i < items.length; i++) {
-		try {
-			// Parâmetros obrigatórios
+	for (let i = 0; i < items.length; i++) {		try {
+			// Required parameters
 			const instanceName = ef.getNodeParameter('instanceName', i) as string;
 			const remoteJid = ef.getNodeParameter('remoteJid', i) as string;
 			const media = ef.getNodeParameter('media', i) as string;
 
-			// Parâmetros opcionais com valores padrão
+			// Optional parameters with default values
 			const mimetype = (ef.getNodeParameter('mimetype', i, 'image/jpeg') as string) || 'image/jpeg';
 			const caption = ef.getNodeParameter('caption', i, '') as string;
 			const fileName = (ef.getNodeParameter('fileName', i, 'image.jpg') as string) || 'image.jpg';
 
-			// Opções adicionais
+			// Additional options
 			const options = ef.getNodeParameter('options_message', i, {}) as {
 				delay?: number;
 				quoted?: {

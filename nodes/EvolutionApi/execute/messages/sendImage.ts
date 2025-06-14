@@ -91,13 +91,12 @@ export async function sendImage(ef: IExecuteFunctions) {
 					data: response,
 				},
 			});
-		} catch (error) {
-			const errorMessage = error.message.includes('Could not get parameter')
-				? 'Parâmetros inválidos ou ausentes'
-				: 'Erro ao enviar imagem';
+		} catch (error) {			const errorMessage = error.message.includes('Could not get parameter')
+				? 'Invalid or missing parameters'
+				: 'Error sending image';
 
 			const errorDetails = error.message.includes('Could not get parameter')
-				? 'Verifique se todos os campos obrigatórios foram preenchidos corretamente'
+				? 'Check if all required fields have been filled in correctly'
 				: error.message;
 
 			if (!ef.continueOnFail()) {

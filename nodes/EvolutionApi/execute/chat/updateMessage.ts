@@ -37,12 +37,11 @@ export async function updateMessage(ef: IExecuteFunctions) {
                 data: response,
             },
         };
-    } catch (error) {
-        const errorData = {
+    } catch (error) {        const errorData = {
             success: false,
             error: {
                 message: error.message,
-                details: 'Erro ao editar mensagem',
+                details: 'Error editing message',
                 code: error.code || 'UNKNOWN_ERROR',
                 timestamp: new Date().toISOString(),
             },

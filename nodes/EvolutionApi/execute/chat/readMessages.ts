@@ -37,16 +37,15 @@ export async function readMessages(ef: IExecuteFunctions) {
 				data: response,
 			},
 		};
-	} catch (error) {
-		const errorData = {
-			success: false,
-			error: {
-				message: error.message,
-				details: 'Erro ao marcar mensagens como lidas',
-				code: error.code || 'UNKNOWN_ERROR',
-				timestamp: new Date().toISOString(),
-			},
-		};
+	} catch (error) {        const errorData = {
+            success: false,
+            error: {
+                message: error.message,
+                details: 'Error marking messages as read',
+                code: error.code || 'UNKNOWN_ERROR',
+                timestamp: new Date().toISOString(),
+            },
+        };
 
 		if (!ef.continueOnFail()) {
 			throw new NodeOperationError(ef.getNode(), error.message, {

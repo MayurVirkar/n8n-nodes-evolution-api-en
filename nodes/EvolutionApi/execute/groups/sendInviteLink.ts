@@ -37,10 +37,9 @@ export async function sendInviteLink(ef: IExecuteFunctions) {
 		};
 	} catch (error) {
 		const errorData = {
-			success: false,
-			error: {
+			success: false,			error: {
 				message: error.message,
-				details: 'Erro ao enviar link de convite do grupo',
+				details: 'Error sending group invite link',
 				code: error.code || 'UNKNOWN_ERROR',
 				timestamp: new Date().toISOString(),
 			},

@@ -33,12 +33,11 @@ export async function sendPresence(ef: IExecuteFunctions) {
                 data: response,
             },
         };
-    } catch (error) {
-        const errorData = {
+    } catch (error) {        const errorData = {
             success: false,
             error: {
                 message: error.message,
-                details: 'Erro ao enviar presença',
+                details: 'Error sending presence',
                 code: error.code || 'UNKNOWN_ERROR',
                 timestamp: new Date().toISOString(),
             },

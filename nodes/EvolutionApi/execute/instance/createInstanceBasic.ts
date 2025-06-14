@@ -153,12 +153,11 @@ export async function createInstanceBasic(ef: IExecuteFunctions) {
 	} catch (error) {
 		const errorData = {
 			success: false,
-			error: {
-				message: error.message.includes('Could not get parameter')
-					? 'Parâmetros inválidos ou ausentes'
-					: 'Erro ao criar instância',
+			error: {				message: error.message.includes('Could not get parameter')
+					? 'Invalid or missing parameters'
+					: 'Error creating instance',
 				details: error.message.includes('Could not get parameter')
-					? 'Verifique se todos os campos obrigatórios foram preenchidos corretamente'
+					? 'Check if all required fields have been filled in correctly'
 					: error.message,
 				code: error.code || 'UNKNOWN_ERROR',
 				timestamp: new Date().toISOString(),

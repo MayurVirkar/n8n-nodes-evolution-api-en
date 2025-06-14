@@ -31,12 +31,11 @@ export async function blockContact(ef: IExecuteFunctions) {
                 data: response,
             },
         };
-    } catch (error) {
-        const errorData = {
+    } catch (error) {        const errorData = {
             success: false,
             error: {
                 message: error.message,
-                details: 'Erro ao gerenciar bloqueio do contato',
+                details: 'Error managing contact block',
                 code: error.code || 'UNKNOWN_ERROR',
                 timestamp: new Date().toISOString(),
             },

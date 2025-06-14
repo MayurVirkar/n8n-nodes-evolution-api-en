@@ -1,15 +1,15 @@
 import { INodeProperties } from 'n8n-workflow';
 
-// Campos das instancias
+// Instance fields
 export const instancesFields: INodeProperties[] = [
-	// Campos = Criar Instancia
+	// Fields = Create Instance
 	{
-		displayName: 'Nome Da Instância',
+		displayName: 'Instance Name',
 		name: 'instanceName',
 		type: 'string',
 		default: '',
 		required: true,
-		description: 'Digite o nome para a instância',
+		description: 'Enter the name for the instance',
 		displayOptions: {
 			show: {
 				resource: ['instances-api'],
@@ -18,7 +18,7 @@ export const instancesFields: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Apikey Para Instancia',
+		displayName: 'API Key for Instance',
 		name: 'token',
 		type: 'string',
 		typeOptions: {
@@ -26,7 +26,7 @@ export const instancesFields: INodeProperties[] = [
 		},
 		default: '',
 
-		description: 'Opicional: Digite um Token para a instancia',
+		description: 'Optional: Enter a Token for the instance',
 		displayOptions: {
 			show: {
 				resource: ['instances-api'],
@@ -35,13 +35,13 @@ export const instancesFields: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Número Do WhatsApp',
+		displayName: 'WhatsApp Number',
 		name: 'number',
 		type: 'string',
 		default: '',
 
 		description:
-			'Opicional: Numero que vai ser conectado na instancia, para receber o Código de pareamento',
+			'Optional: Number that will be connected to the instance, to receive the pairing code',
 		displayOptions: {
 			show: {
 				resource: ['instances-api'],
@@ -50,10 +50,10 @@ export const instancesFields: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Opções',
+		displayName: 'Options',
 		name: 'options_Create_instance',
 		type: 'collection',
-		placeholder: 'Adicionar Campo',
+		placeholder: 'Add Field',
 		default: {},
 		options: [
 			{
@@ -66,112 +66,112 @@ export const instancesFields: INodeProperties[] = [
 				default: { settings: {} },
 				options: [
 					{
-						displayName: 'Configurações Do Chatwoot',
+						displayName: 'Chatwoot Settings',
 						name: 'chatwootSettings',
 						values: [
 							{
-								displayName: 'ID Da Conta Do Chatwoot',
+								displayName: 'Chatwoot Account ID',
 								name: 'chatwootAccountId',
 								type: 'string',
 								default: '',
-								description: 'Digite o ID da conta do Chatwoot',
+								description: 'Enter the Chatwoot account ID',
 							},
 							{
-								displayName: 'Token De Admin Do Chatwoot',
+								displayName: 'Chatwoot Admin Token',
 								name: 'chatwootToken',
 								type: 'string',
 								typeOptions: {
 									password: true,
 								},
 								default: '',
-								description: 'Digite o token de admin do Chatwoot',
+								description: 'Enter the Chatwoot admin token',
 							},
 							{
-								displayName: 'Link Do Chatwoot',
+								displayName: 'Chatwoot URL',
 								name: 'chatwootUrl',
 								type: 'string',
 								default: '',
-								description: 'Digite o link do Chatwoot',
+								description: 'Enter the Chatwoot URL',
 							},
 							{
-								displayName: 'Assinatura Do Agente Do Chatwoot',
+								displayName: 'Chatwoot Agent Signature',
 								name: 'chatwootSignMsg',
 								type: 'boolean',
 								default: false,
 								description: 'Whether to enable or disable the Chatwoot agent signature',
 							},
 							{
-								displayName: 'Reabrir Mensagens No Chatwoot',
+								displayName: 'Reopen Messages in Chatwoot',
 								name: 'chatwootReopenConversation',
 								type: 'boolean',
 								default: false,
 								description: 'Whether to enable or disable reopening messages in Chatwoot',
 							},
 							{
-								displayName: 'Iniciar Conversas Como Pendentes No Chatwoot',
+								displayName: 'Start Conversations as Pending in Chatwoot',
 								name: 'chatwootConversationPending',
 								type: 'boolean',
 								default: false,
 								description: 'Whether to start conversations as pending in Chatwoot',
 							},
 							{
-								displayName: 'Importar Contatos Para O Chatwoot',
+								displayName: 'Import Contacts to Chatwoot',
 								name: 'chatwootImportContacts',
 								type: 'boolean',
 								default: false,
 								description: 'Whether to import contacts to Chatwoot',
 							},
 							{
-								displayName: 'Nome Da Inbox Do Chatwoot',
+								displayName: 'Chatwoot Inbox Name',
 								name: 'chatwootNameInbox',
 								type: 'string',
 								default: '',
-								description: 'Digite o nome da Inbox do Chatwoot',
+								description: 'Enter the Chatwoot inbox name',
 							},
 							{
-								displayName: 'Mesclar Contatos Brasileiros No Chatwoot',
+								displayName: 'Merge Brazilian Contacts in Chatwoot',
 								name: 'chatwootMergeBrazilContacts',
 								type: 'boolean',
 								default: false,
 								description: 'Whether to merge Brazilian contacts in Chatwoot',
 							},
 							{
-								displayName: 'Importar Mensagens Para O Chatwoot',
+								displayName: 'Import Messages to Chatwoot',
 								name: 'chatwootImportMessages',
 								type: 'boolean',
 								default: false,
 								description: 'Whether to import messages to Chatwoot',
 							},
 							{
-								displayName: 'Importar Mensagens De Quantos Dias Para O Chatwoot',
+								displayName: 'Import Messages from How Many Days to Chatwoot',
 								name: 'chatwootDaysLimitImportMessages',
 								type: 'number',
 								default: 0,
 								description:
-									'Digite o número de dias para limitar a importação de mensagens para o Chatwoot',
+									'Enter the number of days to limit message import to Chatwoot',
 							},
 							{
-								displayName: 'Nome Do Contato De QRCode No Chatwoot',
+								displayName: 'QR Code Contact Name in Chatwoot',
 								name: 'chatwootOrganization',
 								type: 'string',
 								default: '',
-								description: 'Digite o nome do contato de QRCode no Chatwoot',
+								description: 'Enter the QR code contact name in Chatwoot',
 							},
 							{
-								displayName: 'Url Do Logo Para O Contato No Chatwoot',
+								displayName: 'Logo URL for Contact in Chatwoot',
 								name: 'chatwootLogo',
 								type: 'string',
 								default:
 									'https://github.com/user-attachments/assets/4d1e9cd6-377a-4383-820a-9a97e6cfbb63',
-								description: 'Digite a URL do logo para o contato no Chatwoot',
+								description: 'Enter the logo URL for the contact in Chatwoot',
 							},
 						],
 					},
 				],
-				description: 'Configurações do Chatwoot',
+				description: 'Chatwoot settings',
 			},
 			{
-				displayName: 'Comportamento',
+				displayName: 'Behavior',
 				name: 'instanceSettings',
 				type: 'fixedCollection',
 				typeOptions: {
@@ -180,18 +180,18 @@ export const instancesFields: INodeProperties[] = [
 				default: { settings: {} },
 				options: [
 					{
-						displayName: 'Comportamento Da Instancia',
+						displayName: 'Instance Behavior',
 						name: 'settings',
 						values: [
 							{
-								displayName: 'Rejeitar Ligações',
+								displayName: 'Reject Calls',
 								name: 'rejectCall',
 								type: 'boolean',
 								default: false,
 								description: 'Whether to automatically reject incoming calls',
 							},
 							{
-								displayName: 'Mensagem Ao Rejeitar',
+								displayName: 'Message When Rejecting',
 								name: 'msgCall',
 								type: 'string',
 								default: '',
@@ -199,35 +199,35 @@ export const instancesFields: INodeProperties[] = [
 									'Whether to send a message after rejecting a call, and if so, what message',
 							},
 							{
-								displayName: 'Ignorar Grupos',
+								displayName: 'Ignore Groups',
 								name: 'groupsIgnore',
 								type: 'boolean',
 								default: false,
 								description: 'Whether to ignore messages from groups',
 							},
 							{
-								displayName: 'Sempre Online',
+								displayName: 'Always Online',
 								name: 'alwaysOnline',
 								type: 'boolean',
 								default: false,
 								description: 'Whether to keep the status always set to Online',
 							},
 							{
-								displayName: 'Ler Mensagens',
+								displayName: 'Read Messages',
 								name: 'readMessages',
 								type: 'boolean',
 								default: false,
 								description: 'Whether to automatically mark messages as read',
 							},
 							{
-								displayName: 'Ler Status',
+								displayName: 'Read Status',
 								name: 'readStatus',
 								type: 'boolean',
 								default: false,
 								description: 'Whether to allow the API to view the Status of added contacts',
 							},
 							{
-								displayName: 'Sincronizar Histórico',
+								displayName: 'Synchronize History',
 								name: 'syncFullHistory',
 								type: 'boolean',
 								default: false,
@@ -236,7 +236,7 @@ export const instancesFields: INodeProperties[] = [
 						],
 					},
 				],
-				description: 'Comportamento da instância',
+				description: 'Instance behavior',
 			},
 			{
 				displayName: 'Proxy',
@@ -248,25 +248,25 @@ export const instancesFields: INodeProperties[] = [
 				default: { settings: {} },
 				options: [
 					{
-						displayName: 'Configurações Do Proxy',
+						displayName: 'Proxy Settings',
 						name: 'proxySettings',
 						values: [
 							{
-								displayName: 'Host Do Proxy',
+								displayName: 'Proxy Host',
 								name: 'proxyHost',
 								type: 'string',
 								default: '',
-								description: 'Digite o host do proxy',
+								description: 'Enter the proxy host',
 							},
 							{
-								displayName: 'Porta Do Proxy',
+								displayName: 'Proxy Port',
 								name: 'proxyPort',
 								type: 'string',
 								default: '1234',
-								description: 'Digite a porta do proxy',
+								description: 'Enter the proxy port',
 							},
 							{
-								displayName: 'Protocolo Do Proxy',
+								displayName: 'Proxy Protocol',
 								name: 'proxyProtocol',
 								type: 'options',
 								options: [
@@ -280,29 +280,29 @@ export const instancesFields: INodeProperties[] = [
 									},
 								],
 								default: 'http',
-								description: 'Selecione o protocolo do proxy',
+								description: 'Select the proxy protocol',
 							},
 							{
-								displayName: 'Usuário Do Proxy',
+								displayName: 'Proxy Username',
 								name: 'proxyUsername',
 								type: 'string',
 								default: '',
-								description: 'Digite o usuário do proxy',
+								description: 'Enter the proxy username',
 							},
 							{
-								displayName: 'Senha Do Proxy',
+								displayName: 'Proxy Password',
 								name: 'proxyPassword',
 								type: 'string',
 								typeOptions: {
 									password: true,
 								},
 								default: '',
-								description: 'Digite a senha do proxy',
+								description: 'Enter the proxy password',
 							},
 						],
 					},
 				],
-				description: 'Configurações do proxy',
+				description: 'Proxy settings',
 			},
 			{
 				displayName: 'RabbitMQ',
@@ -314,18 +314,18 @@ export const instancesFields: INodeProperties[] = [
 				default: { settings: {} },
 				options: [
 					{
-						displayName: 'Configurações Do RabbitMQ',
+						displayName: 'RabbitMQ Settings',
 						name: 'rabbitmqSettings',
 						values: [
 							{
-								displayName: 'Ativa Ou Desativa O RabbitMQ',
+								displayName: 'Enable or Disable RabbitMQ',
 								name: 'rabbitmqEnabled',
 								type: 'boolean',
 								default: false,
-								description: 'Whether to send media data in base64 format in the RabbitMQ', // Atualizado
+								description: 'Whether to send media data in base64 format in the RabbitMQ',
 							},
 							{
-								displayName: 'Eventos',
+								displayName: 'Events',
 								name: 'rabbitmqEvents',
 								type: 'multiOptions',
 								default: [], // Adicionado para resolver o erro

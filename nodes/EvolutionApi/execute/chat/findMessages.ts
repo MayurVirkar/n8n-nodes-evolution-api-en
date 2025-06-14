@@ -37,12 +37,11 @@ export async function findMessages(ef: IExecuteFunctions) {
                 data: response,
             },
         };
-    } catch (error) {
-        const errorData = {
+    } catch (error) {        const errorData = {
             success: false,
             error: {
                 message: error.message,
-                details: 'Erro ao buscar mensagens',
+                details: 'Error searching messages',
                 code: error.code || 'UNKNOWN_ERROR',
                 timestamp: new Date().toISOString(),
             },

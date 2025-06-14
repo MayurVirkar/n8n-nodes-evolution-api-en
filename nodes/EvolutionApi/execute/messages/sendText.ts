@@ -84,13 +84,12 @@ export async function sendText(ef: IExecuteFunctions) {
 					data: response,
 				},
 			});
-		} catch (error) {
-			const errorMessage = error.message.includes('Could not get parameter')
-				? 'Parâmetros inválidos ou ausentes'
-				: 'Erro ao enviar mensagem de texto';
+		} catch (error) {			const errorMessage = error.message.includes('Could not get parameter')
+				? 'Invalid or missing parameters'
+				: 'Error sending text message';
 
 			const errorDetails = error.message.includes('Could not get parameter')
-				? 'Verifique se todos os campos obrigatórios foram preenchidos corretamente'
+				? 'Check if all required fields have been filled in correctly'
 				: error.message;
 
 			if (!ef.continueOnFail()) {

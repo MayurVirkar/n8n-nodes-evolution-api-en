@@ -40,16 +40,15 @@ export async function manageArchive(ef: IExecuteFunctions) {
 				data: response,
 			},
 		};
-	} catch (error) {
-		const errorData = {
-			success: false,
-			error: {
-				message: error.message,
-				details: 'Erro ao gerenciar arquivo da conversa',
-				code: error.code || 'UNKNOWN_ERROR',
-				timestamp: new Date().toISOString(),
-			},
-		};
+	} catch (error) {        const errorData = {
+            success: false,
+            error: {
+                message: error.message,
+                details: 'Error managing chat archive',
+                code: error.code || 'UNKNOWN_ERROR',
+                timestamp: new Date().toISOString(),
+            },
+        };
 
 		if (!ef.continueOnFail()) {
 			throw new NodeOperationError(ef.getNode(), error.message, {

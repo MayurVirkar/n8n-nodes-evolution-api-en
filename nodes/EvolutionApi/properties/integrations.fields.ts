@@ -1,14 +1,14 @@
 import { INodeProperties } from 'n8n-workflow';
 
 export const integrationsFields: INodeProperties[] = [
-	// Campos = Chatwoot
+	// Fields = Chatwoot
 	{
-		displayName: 'Nome Da Instancia',
+		displayName: 'Instance Name',
 		name: 'instanceName',
 		type: 'string',
 		default: '',
 		required: true,
-		description: 'Digite o nome da instância que vai enviar a mensagem',
+		description: 'Enter the name of the instance that will send the message',
 		displayOptions: {
 			show: {
 				resource: ['integrations-api'],
@@ -17,21 +17,21 @@ export const integrationsFields: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'O Que Deseja Fazer',
+		displayName: 'What Do You Want to Do',
 		name: 'resourceForChatwoot',
 		type: 'options',
 		options: [
 			{
-				name: 'Definir Chatwoot',
+				name: 'Set Chatwoot',
 				value: 'setChatwoot',
 			},
 			{
-				name: 'Verificar Chatwoot',
+				name: 'Check Chatwoot',
 				value: 'findChatwoot',
 			},
 		],
 		default: 'setChatwoot',
-		description: 'Escolha entre ativar/desativar Chatwoot ou verificar o Chatwoot',
+		description: 'Choose between enabling/disabling Chatwoot or checking Chatwoot',
 		displayOptions: {
 			show: {
 				resource: ['integrations-api'],
@@ -40,7 +40,7 @@ export const integrationsFields: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Ativar Chatwoot',
+		displayName: 'Enable Chatwoot',
 		name: 'enabled',
 		type: 'boolean',
 		default: true,
@@ -54,12 +54,12 @@ export const integrationsFields: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Link Do Chatwoot',
+		displayName: 'Chatwoot URL',
 		name: 'chatwootUrl',
 		type: 'string',
 		default: '',
 		required: true,
-		description: 'Digite o link do Chatwoot',
+		description: 'Enter the Chatwoot URL',
 		displayOptions: {
 			show: {
 				resource: ['integrations-api'],
@@ -69,12 +69,12 @@ export const integrationsFields: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'ID Da Conta Do Chatwoot',
+		displayName: 'Chatwoot Account ID',
 		name: 'chatwootAccountId',
 		type: 'string',
 		default: '',
 		required: true,
-		description: 'Digite o ID da conta do Chatwoot',
+		description: 'Enter the Chatwoot account ID',
 		displayOptions: {
 			show: {
 				resource: ['integrations-api'],
@@ -84,7 +84,7 @@ export const integrationsFields: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Token De Admin Do Chatwoot',
+		displayName: 'Chatwoot Admin Token',
 		name: 'chatwootToken',
 		type: 'string',
 		required: true,
@@ -92,7 +92,7 @@ export const integrationsFields: INodeProperties[] = [
 			password: true,
 		},
 		default: '',
-		description: 'Digite o token de admin do Chatwoot',
+		description: 'Enter the Chatwoot admin token',
 		displayOptions: {
 			show: {
 				resource: ['integrations-api'],
@@ -186,7 +186,7 @@ export const integrationsFields: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Importar Mensagens Para O Chatwoot',
+		displayName: 'Import Messages to Chatwoot',
 		name: 'chatwootImportMessages',
 		type: 'boolean',
 		default: false,
@@ -200,12 +200,12 @@ export const integrationsFields: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Importar Mensagens De Quantos Dias Para O Chatwoot',
+		displayName: 'Import Messages from How Many Days to Chatwoot',
 		name: 'chatwootDaysLimitImportMessages',
 		type: 'number',
 		default: 0,
 		description:
-			'Opicional: Digite o número de dias para limitar a importação de mensagens para o Chatwoot',
+			'Optional: Enter the number of days to limit message import to Chatwoot',
 		displayOptions: {
 			show: {
 				resource: ['integrations-api'],
@@ -215,7 +215,7 @@ export const integrationsFields: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Criar Caixa De Entrada',
+		displayName: 'Create Inbox',
 		name: 'chatwootAutoCreate',
 		type: 'boolean',
 		default: true,
@@ -229,11 +229,11 @@ export const integrationsFields: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Nome Do Contato De QRCode No Chatwoot',
+		displayName: 'QR Code Contact Name in Chatwoot',
 		name: 'chatwootOrganization',
 		type: 'string',
 		default: '',
-		description: 'Opicional: Digite o nome do contato de QRCode no Chatwoot',
+		description: 'Optional: Enter the QR code contact name in Chatwoot',
 		displayOptions: {
 			show: {
 				resource: ['integrations-api'],
@@ -243,11 +243,11 @@ export const integrationsFields: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Url Do Logo Para O Contato No Chatwoot',
+		displayName: 'Logo URL for Contact in Chatwoot',
 		name: 'chatwootLogo',
 		type: 'string',
 		default: 'https://github.com/user-attachments/assets/4d1e9cd6-377a-4383-820a-9a97e6cfbb63',
-		description: 'Opicional: Digite a URL do logo para o contato no Chatwoot',
+		description: 'Optional: Enter the logo URL for the contact in Chatwoot',
 		displayOptions: {
 			show: {
 				resource: ['integrations-api'],
@@ -257,14 +257,14 @@ export const integrationsFields: INodeProperties[] = [
 		},
 	},
 
-	// Campos = Typebot
+	// Fields = Typebot
 	{
-		displayName: 'Nome Da Instancia',
+		displayName: 'Instance Name',
 		name: 'instanceName',
 		type: 'string',
 		default: '',
 		required: true,
-		description: 'Digite o nome da instância que vai enviar a mensagem',
+		description: 'Enter the name of the instance that will send the message',
 		displayOptions: {
 			show: {
 				resource: ['integrations-api'],
@@ -274,41 +274,41 @@ export const integrationsFields: INodeProperties[] = [
 	},
 
 	{
-		displayName: 'O Que Deseja Fazer',
+		displayName: 'What Do You Want to Do',
 		name: 'resourceForTypebot',
 		type: 'options',
 		options: [
 			{
-				name: 'Adicionar Typebot',
+				name: 'Add Typebot',
 				value: 'createTypebot',
 			},
 			{
-				name: 'Verificar Typebot',
+				name: 'Check Typebot',
 				value: 'findTypebot',
 			},
 			{
-				name: 'Atualizar Typebot',
+				name: 'Update Typebot',
 				value: 'updateTypebot',
 			},
 			{
-				name: 'Deletar Typebot',
+				name: 'Delete Typebot',
 				value: 'deleteTypebot',
 			},
 			{
-				name: 'Iniciar Typebot',
+				name: 'Start Typebot',
 				value: 'startTypebot',
 			},
 			{
-				name: 'Procurar Sessão No Typebot',
+				name: 'Find Session in Typebot',
 				value: 'fetchSessionsTypebot',
 			},
 			{
-				name: 'Alterar Status Da Sessão No Typebot',
+				name: 'Change Session Status in Typebot',
 				value: 'changeStatusTypebot',
 			},
 		],
 		default: 'createTypebot',
-		description: 'Escolha uma opção para realizar com a integração do Typebot',
+		description: 'Choose an option to perform with the Typebot integration',
 		displayOptions: {
 			show: {
 				resource: ['integrations-api'],
@@ -319,11 +319,11 @@ export const integrationsFields: INodeProperties[] = [
 
 	// updateTypebot
 	{
-		displayName: 'ID Do Typebot',
+		displayName: 'Typebot ID',
 		name: 'typebotId',
 		type: 'string',
 		default: '',
-		description: 'Digite o ID do Typebot que deseja buscar, deixe vazio para procurar todos',
+		description: 'Enter the Typebot ID you want to search for, leave empty to search all',
 		displayOptions: {
 			show: {
 				resource: ['integrations-api'],
@@ -339,14 +339,14 @@ export const integrationsFields: INodeProperties[] = [
 		},
 	},
 
-	//Se createTypebot ou updateTypebot
+	//If createTypebot or updateTypebot
 	{
-		displayName: 'URL Da API Do Typebot',
+		displayName: 'Typebot API URL',
 		name: 'url',
 		type: 'string',
 		default: '',
 		required: true,
-		description: 'Digite a URL do seu typebot',
+		description: 'Enter your typebot URL',
 		displayOptions: {
 			show: {
 				resource: ['integrations-api'],
@@ -356,12 +356,12 @@ export const integrationsFields: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Nome Do Typebot',
+		displayName: 'Typebot Name',
 		name: 'typebot',
 		type: 'string',
 		default: '',
 		required: true,
-		description: 'Digite o nome do seu fluxo no typebot',
+		description: 'Enter the name of your flow in typebot',
 		displayOptions: {
 			show: {
 				resource: ['integrations-api'],
@@ -371,12 +371,12 @@ export const integrationsFields: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Tipo De Gatilho',
+		displayName: 'Trigger Type',
 		name: 'triggerType',
 		type: 'options',
 		options: [
 			{
-				name: 'Palavra Chave',
+				name: 'Keyword',
 				value: 'keyword',
 			},
 			{

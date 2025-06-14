@@ -51,16 +51,15 @@ export async function deleteMessage(ef: IExecuteFunctions) {
 				data: response,
 			},
 		};
-	} catch (error) {
-		const errorData = {
-			success: false,
-			error: {
-				message: error.message,
-				details: 'Erro ao deletar mensagem',
-				code: error.code || 'UNKNOWN_ERROR',
-				timestamp: new Date().toISOString(),
-			},
-		};
+	} catch (error) {        const errorData = {
+            success: false,
+            error: {
+                message: error.message,
+                details: 'Error deleting message',
+                code: error.code || 'UNKNOWN_ERROR',
+                timestamp: new Date().toISOString(),
+            },
+        };
 
 		if (!ef.continueOnFail()) {
 			throw new NodeOperationError(ef.getNode(), error.message, {
